@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "0x0001 - Compilers"
+date:   2024-10-27 20:28:31 +0800
+categories: 
+---
+page: [https://cplusplus.com/doc/tutorial/introduction/](https://cplusplus.com/doc/tutorial/introduction/)
+
+**C++11**是 C++ 的第二个主要版本，2011年9月出版。
+
+## 什么是编译器？（What is a compiler?）
+编译器可以把你写的 cpp 代码经过一系列的加工变成**计算机认识的语言**，这是一个复杂的编译过程。
+
+## 控制台程序（Console programs）
+控制台程序是用文本和用户通信的程序，可以获取用户的输入也可以输出文本到屏幕。
+
+### 集成开发环境（IDE）
+本人使用 sublime text 开发。 当然你可以使用其他软件 nvim、emacs、nano、clion、...。

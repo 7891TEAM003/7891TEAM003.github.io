@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-10-27T18:36:00+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ben</title><entry><title type="html">0x0000 - 介绍 &amp;amp; 实验环境</title><link href="http://localhost:4000/2024/10/27/0x0000-%E4%BB%8B%E7%BB%8D-&-%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83.html" rel="alternate" type="text/html" title="0x0000 - 介绍 &amp;amp; 实验环境" /><published>2024-10-27T13:02:26+08:00</published><updated>2024-10-27T13:02:26+08:00</updated><id>http://localhost:4000/2024/10/27/0x0000%20-%20%E4%BB%8B%E7%BB%8D%20&amp;%20%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83</id><content type="html" xml:base="http://localhost:4000/2024/10/27/0x0000-%E4%BB%8B%E7%BB%8D-&amp;-%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83.html"><![CDATA[<p>在 2024/10/26 我想在发些学习 x64 逆向的记录，可以的话也请大家监督我的学习并且帮忙查错。
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-10-27T20:58:41+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ben</title><entry><title type="html">0x0001 - Compilers</title><link href="http://localhost:4000/2024/10/27/0x0001-Compilers.html" rel="alternate" type="text/html" title="0x0001 - Compilers" /><published>2024-10-27T20:28:31+08:00</published><updated>2024-10-27T20:28:31+08:00</updated><id>http://localhost:4000/2024/10/27/0x0001%20-%20Compilers</id><content type="html" xml:base="http://localhost:4000/2024/10/27/0x0001-Compilers.html"><![CDATA[<p>page: <a href="https://cplusplus.com/doc/tutorial/introduction/">https://cplusplus.com/doc/tutorial/introduction/</a></p>
+
+<p><strong>C++11</strong>是 C++ 的第二个主要版本，2011年9月出版。</p>
+
+<h2 id="什么是编译器what-is-a-compiler">什么是编译器？（What is a compiler?）</h2>
+<p>编译器可以把你写的 cpp 代码经过一系列的加工变成<strong>计算机认识的语言</strong>，这是一个复杂的编译过程。</p>
+
+<h2 id="控制台程序console-programs">控制台程序（Console programs）</h2>
+<p>控制台程序是用文本和用户通信的程序，可以获取用户的输入也可以输出文本到屏幕。</p>
+
+<h3 id="集成开发环境ide">集成开发环境（IDE）</h3>
+<p>本人使用 sublime text 开发。 当然你可以使用其他软件 nvim、emacs、nano、clion、…。</p>]]></content><author><name></name></author><summary type="html"><![CDATA[page: https://cplusplus.com/doc/tutorial/introduction/]]></summary></entry><entry><title type="html">0x0000 - 介绍 &amp;amp; 实验环境</title><link href="http://localhost:4000/2024/10/27/0x0000-%E4%BB%8B%E7%BB%8D-&-%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83.html" rel="alternate" type="text/html" title="0x0000 - 介绍 &amp;amp; 实验环境" /><published>2024-10-27T13:02:26+08:00</published><updated>2024-10-27T13:02:26+08:00</updated><id>http://localhost:4000/2024/10/27/0x0000%20-%20%E4%BB%8B%E7%BB%8D%20&amp;%20%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83</id><content type="html" xml:base="http://localhost:4000/2024/10/27/0x0000-%E4%BB%8B%E7%BB%8D-&amp;-%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83.html"><![CDATA[<p>在 2024/10/26 我想在发些学习 x64 逆向的记录，可以的话也请大家监督我的学习并且帮忙查错。
 至少一个星期发一篇。</p>
 
 <p>主要包括几个阶段</p>
@@ -9,7 +20,6 @@
 
 <h2 id="环境">环境：</h2>
 <hr />
-
 <h3 id="os">OS</h3>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  ~ <span class="nb">uname</span> <span class="nt">-a</span>
 Linux code 6.10.13-3-MANJARO <span class="c">#1 SMP PREEMPT_DYNAMIC Tue Oct  8 03:24:49 UTC 2024 x86_64 GNU/Linux</span>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-10-27T15:00:10+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ben</title><entry><title type="html">0x0000 - 介绍 &amp;amp; 实验环境</title><link href="http://localhost:4000/2024/10/27/welcome-to-jekyll.html" rel="alternate" type="text/html" title="0x0000 - 介绍 &amp;amp; 实验环境" /><published>2024-10-27T13:02:26+08:00</published><updated>2024-10-27T13:02:26+08:00</updated><id>http://localhost:4000/2024/10/27/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2024/10/27/welcome-to-jekyll.html"><![CDATA[<p>在 2024/10/26 我想在发些学习 x64 逆向的记录，可以的话也请大家监督我的学习并且帮忙查错。
+至少一个星期发一篇。</p>
+
+<p>主要包括几个阶段</p>
+<ol>
+  <li>以 <a href="https://cplusplus.com/doc/tutorial/">https://cplusplus.com/doc/tutorial/</a> 教学内容为例子，我也不知道什么时候能学完。</li>
+  <li>实战逆向 <a href="https://crackmes.one/">https://crackmes.one/</a> 如果时间充足的话，我应该把这些都给逆向</li>
+</ol>
+
+<h2 id="环境">环境：</h2>
+<hr />
+
+<h3 id="os">OS</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  ~ <span class="nb">uname</span> <span class="nt">-a</span>
+Linux code 6.10.13-3-MANJARO <span class="c">#1 SMP PREEMPT_DYNAMIC Tue Oct  8 03:24:49 UTC 2024 x86_64 GNU/Linux</span>
+</code></pre></div></div>
+<h3 id="g">g++</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  ~ c++ <span class="nt">-v</span>
+Using built-in specs.
+<span class="nv">COLLECT_GCC</span><span class="o">=</span>c++
+<span class="nv">COLLECT_LTO_WRAPPER</span><span class="o">=</span>/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: /build/gcc/src/gcc/configure <span class="nt">--enable-languages</span><span class="o">=</span>ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust <span class="nt">--enable-bootstrap</span> <span class="nt">--prefix</span><span class="o">=</span>/usr <span class="nt">--libdir</span><span class="o">=</span>/usr/lib <span class="nt">--libexecdir</span><span class="o">=</span>/usr/lib <span class="nt">--mandir</span><span class="o">=</span>/usr/share/man <span class="nt">--infodir</span><span class="o">=</span>/usr/share/info <span class="nt">--with-bugurl</span><span class="o">=</span>https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues <span class="nt">--with-build-config</span><span class="o">=</span>bootstrap-lto <span class="nt">--with-linker-hash-style</span><span class="o">=</span>gnu <span class="nt">--with-system-zlib</span> <span class="nt">--enable-__cxa_atexit</span> <span class="nt">--enable-cet</span><span class="o">=</span>auto <span class="nt">--enable-checking</span><span class="o">=</span>release <span class="nt">--enable-clocale</span><span class="o">=</span>gnu <span class="nt">--enable-default-pie</span> <span class="nt">--enable-default-ssp</span> <span class="nt">--enable-gnu-indirect-function</span> <span class="nt">--enable-gnu-unique-object</span> <span class="nt">--enable-libstdcxx-backtrace</span> <span class="nt">--enable-link-serialization</span><span class="o">=</span>1 <span class="nt">--enable-linker-build-id</span> <span class="nt">--enable-lto</span> <span class="nt">--enable-multilib</span> <span class="nt">--enable-plugin</span> <span class="nt">--enable-shared</span> <span class="nt">--enable-threads</span><span class="o">=</span>posix <span class="nt">--disable-libssp</span> <span class="nt">--disable-libstdcxx-pch</span> <span class="nt">--disable-werror</span>
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 14.2.1 20240910 <span class="o">(</span>GCC<span class="o">)</span>
+</code></pre></div></div>
+<h3 id="r2">r2</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  ~ r2 <span class="nt">-v</span>
+radare2 5.9.2 0 @ linux-x86-64
+birth: git.5.9.2 2024-08-01__08:35:56
+options: gpl release <span class="nt">-O1</span> cs:5 cl:2 meson
+</code></pre></div></div>
+
+<h2 id="快速编译">快速编译</h2>
+<hr />
+<p>在编译 cpp 文件时非常需要输入一堆命令非常麻烦，我使用通义千问的 AI 生成了这样一个脚本，并且做了一些小改动。</p>
+
+<h3 id="1-查看那些目录是环境变量目录前面的目录优先权最大">1. 查看那些目录是环境变量目录，前面的目录优先权最大。</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  ~ <span class="nb">echo</span> <span class="nv">$PATH</span> 
+/home/frank/.local/bin /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl /usr/lib/rustup/bin
+</code></pre></div></div>
+
+<h3 id="2-这是一个-bash-脚本可以快速编译-cpp-文件">2. 这是一个 bash 脚本，可以快速编译 cpp 文件。</h3>
+<p>把这个文件放到环境变量目录就可以全局执行了。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> /home/frank/.local/bin/g
+<span class="c">#!/bin/bash</span>
+
+<span class="nv">fullpath</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+
+<span class="c"># 检查是否有参数传入</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$fullpath</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> &lt;filename&gt;"</span>
+  <span class="nb">exit </span>1
+<span class="k">fi</span>
+
+<span class="c"># 检查文件是否存在</span>
+<span class="k">if</span> <span class="o">[</span> <span class="o">!</span> <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$fullpath</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"File not found: </span><span class="nv">$fullpath</span><span class="s2">"</span>
+  <span class="nb">exit </span>1
+<span class="k">fi</span>
+
+<span class="c"># 提取文件名（包括扩展名）</span>
+<span class="nv">fullfilename</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="nt">--</span> <span class="s2">"</span><span class="nv">$fullpath</span><span class="s2">"</span><span class="si">)</span>
+
+<span class="c"># 提取文件名（去掉扩展名）</span>
+<span class="nv">filename</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">fullfilename</span><span class="p">%.*</span><span class="k">}</span><span class="s2">"</span>
+
+<span class="c"># 提取文件扩展名</span>
+<span class="nv">extension</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">fullfilename</span><span class="p">##*.</span><span class="k">}</span><span class="s2">"</span> 
+
+<span class="c"># 检查是否是 C++ 文件</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$extension</span><span class="s2">"</span> <span class="o">!=</span> <span class="s2">"cpp"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Unsupported file type: </span><span class="nv">$extension</span><span class="s2"> (only .cpp is supported)"</span>
+  <span class="nb">exit </span>1
+<span class="k">fi</span>
+
+<span class="c"># 编译命令</span>
+g++ <span class="nt">-Wall</span> <span class="nt">-std</span><span class="o">=</span>c++11 <span class="nt">-o</span> <span class="s2">"</span><span class="nv">$filename</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$fullpath</span><span class="s2">"</span>
+
+<span class="c"># 检查编译是否成功</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="nt">-eq</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Compilation successful. Executable: </span><span class="nv">$filename</span><span class="s2">"</span>
+<span class="k">else
+  </span><span class="nb">echo</span> <span class="s2">"Compilation failed."</span>
+<span class="k">fi</span>
+</code></pre></div></div>]]></content><author><name></name></author><summary type="html"><![CDATA[在 2024/10/26 我想在发些学习 x64 逆向的记录，可以的话也请大家监督我的学习并且帮忙查错。 至少一个星期发一篇。]]></summary></entry></feed>

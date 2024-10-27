@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>0x0000 - 介绍 &amp; 实验环境 | Ben</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="0x0000 - 介绍 &amp; 实验环境" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="在 2024/10/26 我想在发些学习 x64 逆向的记录，可以的话也请大家监督我的学习并且帮忙查错。 至少一个星期发一篇。" />
+<meta property="og:description" content="在 2024/10/26 我想在发些学习 x64 逆向的记录，可以的话也请大家监督我的学习并且帮忙查错。 至少一个星期发一篇。" />
+<link rel="canonical" href="http://localhost:4000/2024/10/27/welcome-to-jekyll.html" />
+<meta property="og:url" content="http://localhost:4000/2024/10/27/welcome-to-jekyll.html" />
+<meta property="og:site_name" content="Ben" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-10-27T13:02:26+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="0x0000 - 介绍 &amp; 实验环境" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-10-27T13:02:26+08:00","datePublished":"2024-10-27T13:02:26+08:00","description":"在 2024/10/26 我想在发些学习 x64 逆向的记录，可以的话也请大家监督我的学习并且帮忙查错。 至少一个星期发一篇。","headline":"0x0000 - 介绍 &amp; 实验环境","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2024/10/27/welcome-to-jekyll.html"},"url":"http://localhost:4000/2024/10/27/welcome-to-jekyll.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Ben" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Ben</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">0x0000 - 介绍 &amp; 实验环境</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2024-10-27T13:02:26+08:00" itemprop="datePublished">
+        Oct 27, 2024
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>在 2024/10/26 我想在发些学习 x64 逆向的记录，可以的话也请大家监督我的学习并且帮忙查错。
+至少一个星期发一篇。</p>
+
+<p>主要包括几个阶段</p>
+<ol>
+  <li>以 <a href="https://cplusplus.com/doc/tutorial/">https://cplusplus.com/doc/tutorial/</a> 教学内容为例子，我也不知道什么时候能学完。</li>
+  <li>实战逆向 <a href="https://crackmes.one/">https://crackmes.one/</a> 如果时间充足的话，我应该把这些都给逆向</li>
+</ol>
+
+<h2 id="环境">环境：</h2>
+<hr />
+
+<h3 id="os">OS</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  ~ <span class="nb">uname</span> <span class="nt">-a</span>
+Linux code 6.10.13-3-MANJARO <span class="c">#1 SMP PREEMPT_DYNAMIC Tue Oct  8 03:24:49 UTC 2024 x86_64 GNU/Linux</span>
+</code></pre></div></div>
+<h3 id="g">g++</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  ~ c++ <span class="nt">-v</span>
+Using built-in specs.
+<span class="nv">COLLECT_GCC</span><span class="o">=</span>c++
+<span class="nv">COLLECT_LTO_WRAPPER</span><span class="o">=</span>/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: /build/gcc/src/gcc/configure <span class="nt">--enable-languages</span><span class="o">=</span>ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust <span class="nt">--enable-bootstrap</span> <span class="nt">--prefix</span><span class="o">=</span>/usr <span class="nt">--libdir</span><span class="o">=</span>/usr/lib <span class="nt">--libexecdir</span><span class="o">=</span>/usr/lib <span class="nt">--mandir</span><span class="o">=</span>/usr/share/man <span class="nt">--infodir</span><span class="o">=</span>/usr/share/info <span class="nt">--with-bugurl</span><span class="o">=</span>https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues <span class="nt">--with-build-config</span><span class="o">=</span>bootstrap-lto <span class="nt">--with-linker-hash-style</span><span class="o">=</span>gnu <span class="nt">--with-system-zlib</span> <span class="nt">--enable-__cxa_atexit</span> <span class="nt">--enable-cet</span><span class="o">=</span>auto <span class="nt">--enable-checking</span><span class="o">=</span>release <span class="nt">--enable-clocale</span><span class="o">=</span>gnu <span class="nt">--enable-default-pie</span> <span class="nt">--enable-default-ssp</span> <span class="nt">--enable-gnu-indirect-function</span> <span class="nt">--enable-gnu-unique-object</span> <span class="nt">--enable-libstdcxx-backtrace</span> <span class="nt">--enable-link-serialization</span><span class="o">=</span>1 <span class="nt">--enable-linker-build-id</span> <span class="nt">--enable-lto</span> <span class="nt">--enable-multilib</span> <span class="nt">--enable-plugin</span> <span class="nt">--enable-shared</span> <span class="nt">--enable-threads</span><span class="o">=</span>posix <span class="nt">--disable-libssp</span> <span class="nt">--disable-libstdcxx-pch</span> <span class="nt">--disable-werror</span>
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 14.2.1 20240910 <span class="o">(</span>GCC<span class="o">)</span>
+</code></pre></div></div>
+<h3 id="r2">r2</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  ~ r2 <span class="nt">-v</span>
+radare2 5.9.2 0 @ linux-x86-64
+birth: git.5.9.2 2024-08-01__08:35:56
+options: gpl release <span class="nt">-O1</span> cs:5 cl:2 meson
+</code></pre></div></div>
+
+<h2 id="快速编译">快速编译</h2>
+<hr />
+<p>在编译 cpp 文件时非常需要输入一堆命令非常麻烦，我使用通义千问的 AI 生成了这样一个脚本，并且做了一些小改动。</p>
+
+<h3 id="1-查看那些目录是环境变量目录前面的目录优先权最大">1. 查看那些目录是环境变量目录，前面的目录优先权最大。</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  ~ <span class="nb">echo</span> <span class="nv">$PATH</span> 
+/home/frank/.local/bin /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl /usr/lib/rustup/bin
+</code></pre></div></div>
+
+<h3 id="2-这是一个-bash-脚本可以快速编译-cpp-文件">2. 这是一个 bash 脚本，可以快速编译 cpp 文件。</h3>
+<p>把这个文件放到环境变量目录就可以全局执行了。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> /home/frank/.local/bin/g
+<span class="c">#!/bin/bash</span>
+
+<span class="nv">fullpath</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+
+<span class="c"># 检查是否有参数传入</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$fullpath</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> &lt;filename&gt;"</span>
+  <span class="nb">exit </span>1
+<span class="k">fi</span>
+
+<span class="c"># 检查文件是否存在</span>
+<span class="k">if</span> <span class="o">[</span> <span class="o">!</span> <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$fullpath</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"File not found: </span><span class="nv">$fullpath</span><span class="s2">"</span>
+  <span class="nb">exit </span>1
+<span class="k">fi</span>
+
+<span class="c"># 提取文件名（包括扩展名）</span>
+<span class="nv">fullfilename</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="nt">--</span> <span class="s2">"</span><span class="nv">$fullpath</span><span class="s2">"</span><span class="si">)</span>
+
+<span class="c"># 提取文件名（去掉扩展名）</span>
+<span class="nv">filename</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">fullfilename</span><span class="p">%.*</span><span class="k">}</span><span class="s2">"</span>
+
+<span class="c"># 提取文件扩展名</span>
+<span class="nv">extension</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">fullfilename</span><span class="p">##*.</span><span class="k">}</span><span class="s2">"</span> 
+
+<span class="c"># 检查是否是 C++ 文件</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$extension</span><span class="s2">"</span> <span class="o">!=</span> <span class="s2">"cpp"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Unsupported file type: </span><span class="nv">$extension</span><span class="s2"> (only .cpp is supported)"</span>
+  <span class="nb">exit </span>1
+<span class="k">fi</span>
+
+<span class="c"># 编译命令</span>
+g++ <span class="nt">-Wall</span> <span class="nt">-std</span><span class="o">=</span>c++11 <span class="nt">-o</span> <span class="s2">"</span><span class="nv">$filename</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$fullpath</span><span class="s2">"</span>
+
+<span class="c"># 检查编译是否成功</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="nt">-eq</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Compilation successful. Executable: </span><span class="nv">$filename</span><span class="s2">"</span>
+<span class="k">else
+  </span><span class="nb">echo</span> <span class="s2">"Compilation failed."</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+
+  </div><a class="u-url" href="/2024/10/27/welcome-to-jekyll.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+          GitHub: <a href="https://github.com/7891team003">7891TEAM003</a>
+      </div>
+      <div class="footer-col">
+        <p>一个普通人</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul></div>
+
+  </div>
+
+</footer></body>
+
+</html>

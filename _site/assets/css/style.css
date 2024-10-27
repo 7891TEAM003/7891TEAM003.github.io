@@ -340,8 +340,9 @@ code {
 }
 
 pre {
-  padding: 8px 12px;
-  overflow-x: auto;
+  padding: 5px 12px;
+  font-size: 14px;
+  white-space: pre-wrap;
 }
 pre > code {
   border: 0;

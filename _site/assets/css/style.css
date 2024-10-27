@@ -545,7 +545,7 @@ table td {
  */
 .site-footer {
   border-top: 1px solid rgb(63.75, 63.75, 63.75);
-  padding: 30px 0;
+  padding: 30px 0 0 0;
 }
 
 .footer-heading {

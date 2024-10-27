@@ -7,5 +7,5 @@ permalink: /about/
 Themes: [https://github.com/jekyll/minima](https://github.com/jekyll/minima)
 
 My personal information
- - mail: 7891team003@gmail.com
+ - Gmail: [7891team003@gmail.com](mailto:7891team003@gmail.com)
  

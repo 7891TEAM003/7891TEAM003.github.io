@@ -28,11 +28,10 @@ email: 7891team003@gmail.com
 github_username: 7891TEAM003
 
 # Build settings
-remote_theme: jekyll/minima
 theme: minima
-
 plugins:
-  - jekyll-remote-theme
+ - jekyll-remote-theme
+remote_theme: jekyll/minima
 
 minima:
   skin: dark

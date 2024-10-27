@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "0x0000 - 介绍 & 实验环境"
+date:   2024-10-27 13:02:26 +0800
+categories: 
+---
+
+在 2024/10/26 我想在发些学习 x64 逆向的记录，可以的话也请大家监督我的学习并且帮忙查错。
+至少一个星期发一篇。
+
+主要包括几个阶段
+1. 以 [https://cplusplus.com/doc/tutorial/](https://cplusplus.com/doc/tutorial/) 教学内容为例子，我也不知道什么时候能学完。
+2. 实战逆向 [https://crackmes.one/](https://crackmes.one/) 如果时间充足的话，我应该把这些都给逆向
+
+## 环境：
+---
+
+### OS
+```bash
+➜  ~ uname -a
+Linux code 6.10.13-3-MANJARO #1 SMP PREEMPT_DYNAMIC Tue Oct  8 03:24:49 UTC 2024 x86_64 GNU/Linux
+```
+### g++
+```bash
+➜  ~ c++ -v
+Using built-in specs.
+COLLECT_GCC=c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 14.2.1 20240910 (GCC)
+```
+### r2
+```bash
+➜  ~ r2 -v
+radare2 5.9.2 0 @ linux-x86-64
+birth: git.5.9.2 2024-08-01__08:35:56
+options: gpl release -O1 cs:5 cl:2 meson
+```
+
+## 快速编译
+---
+在编译 cpp 文件时非常需要输入一堆命令非常麻烦，我使用通义千问的 AI 生成了这样一个脚本，并且做了一些小改动。
+
+### 1. 查看那些目录是环境变量目录，前面的目录优先权最大。
+``` bash
+➜  ~ echo $PATH 
+/home/frank/.local/bin /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl /usr/lib/rustup/bin
+```
+
+### 2. 这是一个 bash 脚本，可以快速编译 cpp 文件。 
+把这个文件放到环境变量目录就可以全局执行了。
+```bash
+$ cat /home/frank/.local/bin/g
+#!/bin/bash
+
+fullpath="$1"
+
+# 检查是否有参数传入
+if [ -z "$fullpath" ]; then
+  echo "Usage: $0 <filename>"
+  exit 1
+fi
+
+# 检查文件是否存在
+if [ ! -f "$fullpath" ]; then
+  echo "File not found: $fullpath"
+  exit 1
+fi
+
+# 提取文件名（包括扩展名）
+fullfilename=$(basename -- "$fullpath")
+
+# 提取文件名（去掉扩展名）
+filename="${fullfilename%.*}"
+
+# 提取文件扩展名
+extension="${fullfilename##*.}" 
+
+# 检查是否是 C++ 文件
+if [ "$extension" != "cpp" ]; then
+  echo "Unsupported file type: $extension (only .cpp is supported)"
+  exit 1
+fi
+
+# 编译命令
+g++ -Wall -std=c++11 -o "$filename" "$fullpath"
+
+# 检查编译是否成功
+if [ $? -eq 0 ]; then
+  echo "Compilation successful. Executable: $filename"
+else
+  echo "Compilation failed."
+fi
+```

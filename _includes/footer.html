@@ -8,12 +8,16 @@
         <ul>
            <li>GitHub: <a href="https://github.com/7891team003">7891TEAM003</a></li>
            <li>Gamil: <a href="mailto:7891team003@gmail.com">7891team003@gmail.com</a></li>
+           
         </ul>
       </div>
       <div class="footer-col">
-        <p>一个普通人</p>
+        <span>一个普通人</span> <br/>
+        {% if page.layout == "post" %}
+        <script async src="/js/busuanzi.pure.mini.js"></script> 
+        <span id="busuanzi_container_page_pv">阅读量：<span id="busuanzi_value_page_pv"></span></span>
+        {% endif %}
       </div>
-    
     </div>
   </div>
 </footer>
